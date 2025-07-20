@@ -1,0 +1,1 @@
+ここにCubism Editorのテンプレートモデル一式を配置してください（model3.json, cmo3, moc3, motion, textureなど）
