@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>AITuber Test Frontend</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>AITuber 表情制御デモ</h1>
+    <div>
+        <textarea id="textInput" placeholder="文字を入力してください"></textarea><br>
+        <button onclick="sendInput()">送信</button>
+    </div>
+    <div>
+        <button onclick="startAudio()">音声入力（リップシンク）</button>
+    </div>
+    <div>
+        <button onclick="startCamera()">カメラON（表情トラッキング）</button>
+    </div>
+</body>
+</html>
