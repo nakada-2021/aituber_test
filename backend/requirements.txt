@@ -2,3 +2,5 @@
 fastapi
 uvicorn
 openai
+gtts
+google-cloud-storage
