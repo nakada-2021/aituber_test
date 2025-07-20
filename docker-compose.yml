@@ -18,7 +18,7 @@ services:
       - "3000:3000"
 
   llama_cpp:
-    image: ghcr.io/ggerganov/llama.cpp:${LLAMA_MODE}
+    image: ghcr.io/abetlen/llama-cpp-python:latest
     runtime: ${GPU_RUNTIME}
     environment:
       - NVIDIA_VISIBLE_DEVICES=${NVIDIA_DEVICES}
@@ -26,4 +26,8 @@ services:
       - ./models:/models
     ports:
       - "5000:5000"
-    command: [ "--model", "/models/your_model.gguf", "--port", "5000" ]
+    command:
+      - --model /models/your_model.gguf
+      - --host 0.0.0.0
+      - --port 5000
+      - --n_gpu_layers 0  # GPU動作は50。CPUの場合は0
