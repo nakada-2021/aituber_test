@@ -8,6 +8,9 @@ services:
       - "8000:8000"
     environment:
       - OPENAI_API_KEY=your_api_key_here
+      - LLM_URL=http://llama_cpp:5000/completion
+    depends_on:
+      - llama_cpp
 
   frontend:
     build: ./frontend
@@ -15,3 +18,11 @@ services:
       - "3000:3000"
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost:8000/api
+
+  llama_cpp:
+    image: ghcr.io/ggerganov/llama.cpp:latest
+    volumes:
+      - ./models:/models
+    ports:
+      - "5000:5000"
+    command: [ "--model", "/models/your_model.gguf", "--port", "5000" ]

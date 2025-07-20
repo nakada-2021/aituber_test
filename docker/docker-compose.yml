@@ -1,9 +1,0 @@
-
-version: "3"
-services:
-  aituber-backend:
-    build: ./docker
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./models:/app/models
