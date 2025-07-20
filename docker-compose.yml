@@ -16,11 +16,12 @@ services:
     build: ./frontend
     ports:
       - "3000:3000"
-    environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000/api
 
   llama_cpp:
-    image: ghcr.io/ggerganov/llama.cpp:latest
+    image: ghcr.io/ggerganov/llama.cpp:${LLAMA_MODE}
+    runtime: ${GPU_RUNTIME}
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=${NVIDIA_DEVICES}
     volumes:
       - ./models:/models
     ports:
