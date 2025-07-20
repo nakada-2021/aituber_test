@@ -3,9 +3,11 @@ from fastapi import FastAPI, WebSocket
 from pydantic import BaseModel
 import openai
 import os
+from app import cloud_ws_tts_api
 
 app = FastAPI()
 openai.api_key = os.getenv("OPENAI_API_KEY")
+app.mount("/ws", cloud_ws_tts_api.app)
 
 class ChatInput(BaseModel):
     text: str
