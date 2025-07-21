@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@framework/*": ["../Framework/src/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "../Framework/src/**/*"
+  ]
+}
