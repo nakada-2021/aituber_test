@@ -1,9 +1,9 @@
 
-fastapi
-uvicorn
+fastapi==0.95.2
+uvicorn==0.23.2
 requests
 openai==0.28
-websockets
+websockets==10.4
 gtts
 google-cloud-storage
 boto3
